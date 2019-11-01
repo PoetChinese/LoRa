@@ -1,0 +1,6 @@
+{
+    "terminal.integrated.env.windows": {
+        "PATH": "C:\\.platformio\\penv\\Scripts;C:\\.platformio\\penv;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\Daily_Softwave\\svn\\bin;D:\\IT_Softwave\\Git\\cmd;C:\\Python27;C:\\Users\\Administrator\\.platformio\\python37\\Scripts\\;C:\\Users\\Administrator\\.platformio\\python37\\;C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Administrator\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\Daily_Softwave\\svn\\bin;D:\\IT_Softwave\\Git\\cmd;C:\\Python27;C:\\Users\\Administrator\\.platformio\\python37\\Scripts\\;C:\\Users\\Administrator\\.platformio\\python37\\;C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Administrator\\AppData\\Local\\Programs\\Microsoft VS Code\\bin",
+        "PLATFORMIO_CALLER": "vscode"
+    }
+}
