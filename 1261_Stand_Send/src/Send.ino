@@ -37,13 +37,13 @@ void OnCadDone(bool cadResult);
 
 
 // Define LoRa parameters
-#define RF_FREQUENCY 			434000000  // Hz
+#define RF_FREQUENCY 			422000000  // Hz
 #define TX_OUTPUT_POWER 		14		// dBm
 #define LORA_BANDWIDTH 			0		// [0: 125 kHz, 1: 250 kHz, 2: 500 kHz, 3: Reserved]
-#define LORA_SPREADING_FACTOR 	7      // [SF7..SF12]
+#define LORA_SPREADING_FACTOR   8     // [SF7..SF12]
 #define LORA_CODINGRATE 		1		// [1: 4/5, 2: 4/6,  3: 4/7,  4: 4/8]
-#define LORA_PREAMBLE_LENGTH 	8  // Same for Tx and Rx
-#define LORA_SYMBOL_TIMEOUT 	100   // Symbols
+#define LORA_PREAMBLE_LENGTH 	8	 // Same for Tx and Rx
+#define LORA_SYMBOL_TIMEOUT 	8  	// Symbols
 #define LORA_FIX_LENGTH_PAYLOAD_ON false
 #define LORA_IQ_INVERSION_ON 	false
 #define RX_TIMEOUT_VALUE 		4000
@@ -145,6 +145,7 @@ void setup()
 	// Start LoRa
 	
 	Serial.println("Starting Send"); 
+	Radio.Standby();
 	// Radio.Rx(RX_TIMEOUT_VALUE);
     //Radio.SX126xSendPayload("123485");
     //Radio.SetTxContinuousWave(915,15,30);
@@ -158,8 +159,9 @@ void loop()
 	// We are on FreeRTOS, give other tasks a chance to run
 	delay(100);
 	yield();
-	Radio.Send((uint8_t *)"123456789abcdefghijklmn",24);
-	delay(5000);
+	
+	// Radio.Send((uint8_t *)"123456789abcdefghijklmn",24);
+	delay(500);
 }
 
 /**@brief Function to be executed on Radio Tx Done event
@@ -204,7 +206,7 @@ void OnTxTimeout(void)
 	Serial.println("OnTxTimeout");
 	digitalWrite(LED_BUILTIN, LOW);
 
-	Radio.Rx(RX_TIMEOUT_VALUE);
+	// Radio.Rx(RX_TIMEOUT_VALUE);
 }
 
 /**@brief Function to be executed on Radio Rx Timeout event
